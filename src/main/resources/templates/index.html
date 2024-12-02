@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentários</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema de Comentários</h1>
+        </header>
+
+        <main>
+            <form action="/adicionarComentario" method="post" class="comentario-form">
+                <input 
+                    type="text" 
+                    name="comentario" 
+                    placeholder="Digite seu comentário" 
+                    required
+                >
+                <button type="submit">Enviar</button>
+            </form>
+
+            <section>
+                <h2>Comentários</h2>
+                <ul class="comentarios-list">
+                    <li th:each="comentario : ${comentarios}" th:utext="${comentario}"></li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>Desenvolvido para demonstração de vulnerabilidades. ⚠️</p>
+        </footer>
+    </div>
+</body>
+</html>
